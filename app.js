@@ -26,7 +26,7 @@ const readline = require("readline-sync");
 
 class Usuario {
     constructor(cpf, nome, saldo) {
-        this.id = cpf;
+        this.cpf = cpf;
         this.nome = nome;
         this.saldo = saldo;
     }
@@ -43,18 +43,49 @@ console.log("========================================");
 let cpf = readline.question("Digite seu cpf: ");
 console.log("========================================");
 
-function bemvindo(cpf){
+let saldoUsuario;
+
+
+let rodar = false;
+bemvindo(cpf);
+
+
+while (rodar) {
+  console.log(`=========== Qual operação deseja realizar? ===========`);
+  console.log(`================= 1. Consultar saldo =================`);
+  console.log(`================= 2. Sacar saldo =====================`);
+  console.log(`================= 3. Transferencia ===================`);
+  console.log(`================= 4. Sair ============================`);
+
+  let escolha = parseInt(readline.question("Digite o número da operação: "));
+
+  switch(escolha){
+    case 1:
+        consultaSaldo(cpf);
+        // console.log(saldoUsuario);
+        readline.keyInPause();
+        break;
+  }
+}
+
+function bemvindo(cpfU){
     for(const u of usuarios){
-        if (u.cpf == cpf){
-            console.log(`========= Bem vindo ${u.nome} ===========`);
+        if (u.cpf == cpfU){
+            console.log(`============= Bem vindo ${u.nome} ===============`);
+            saldoUsuario = u.saldo;
+            rodar = true;
+        } else{
+            console.log('Usuario não encontrado!');
         }
     };
 }
-bemvindo(cpf);
-// console.clear();
-// let rodar = true;
 
-// while (rodar) {
-//   console.log(`========= `);
+function consultaSaldo(cpfU){
+    for(const u of usuarios){
+        if (u.cpf == cpfU){
+            console.log(`============= Seu saldo é de R$${u.saldo} ===============`);
+        
+        }
+    };
+}
 
-// }
