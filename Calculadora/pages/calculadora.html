@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button id="toggle" class="button"><img class="img-btn" src="../assets/imagem/lua.svg" alt=""></a></button>
+        </nav>
+    </header>
+    <!-- Contêiner principal da calculadora -->
+    <div class="calculadora">
+        <!-- Campo de texto desabilitado, utilizado para exibir os valores -->
+        <input type="text" id="visor" disabled />
+        
+        <!-- Botões da calculadora, cada um chamando uma função correspondente ao ser clicado -->
+        <button onclick="adicionarNumero('1')">1</button>
+        <button onclick="adicionarNumero('2')">2</button>
+        <button onclick="adicionarNumero('3')">3</button>
+        <button onclick="adicionarOperador('+')" id="iphone">+</button>
+
+        <button onclick="adicionarNumero('4')">4</button>
+        <button onclick="adicionarNumero('5')">5</button>
+        <button onclick="adicionarNumero('6')">6</button>
+        <button onclick="adicionarOperador('-')" id="iphone">-</button>
+
+        <button onclick="adicionarNumero('7')">7</button>
+        <button onclick="adicionarNumero('8')">8</button>
+        <button onclick="adicionarNumero('9')">9</button>
+        <button onclick="adicionarOperador('*')" id="iphone">*</button>
+
+        <button onclick="adicionarNumero('0')">0</button>
+        <button onclick="limparVisor()">C</button> <!-- Limpa o visor -->
+        <button onclick="calcular()" id="iphone">=</button> <!-- Realiza o cálculo -->
+        <button onclick="adicionarOperador('/')" id="iphone">/</button>
+    </div>
+
+    <script src="../dist/calculadora.js"></script> <!-- Link para o arquivo JavaScript compilado -->
+</body>
+</html>
