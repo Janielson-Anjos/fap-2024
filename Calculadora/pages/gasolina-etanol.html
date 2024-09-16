@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasolina ou Etanol</title>
+    <link rel="stylesheet" href="../assets/css/gasolina-etanol.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="calculadora.html">Calculadora</a></li>
+                <li><a href="imc.html">IMC</a></li>
+                <li><a href="gasolina-etanol.html">Gasolina ou Etanol</a></li>
+                <li><a href="conversao.html">Conversão Reais/Dólares</a></li>
+            </ul>
+            <button id="toggle" class="button"><img class="img-btn" src="../assets/imagem/lua.svg" alt=""></button>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Gasolina ou Etanol</h1>
+        <p>Saiba qual a melhor opção para o abastecimento do seu carro!</p>
+        <label for="gasolina">Valor da Gasolina (R$):</label>
+        <input type="number" id="gasolina" step="0.01" placeholder="5.60">
+        <label for="etanol">Valor do Etanol (R$):</label>
+        <input type="number" id="etanol" step="0.01" placeholder="3.79">
+        <button onclick="calcularCombustivel()">Calcular</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script src="../dist/gasolina-etanol.js"></script>
+</body>
+</html>
