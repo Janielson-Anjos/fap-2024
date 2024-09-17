@@ -30,11 +30,53 @@ function limparVisor() {
 }
 
 
-document.getElementById('toggle').addEventListener('click', function() {
+// document.getElementById('toggle').addEventListener('click', function() {
+//     const body = document.body;
+//     if (body.style.backgroundImage) {
+//         body.style.backgroundImage = '';
+//     } else {
+//         body.style.backgroundImage = 'url(../imagem/foto-evento-iv-maratona-de-calculo-cct-unifor-800-getty-images.jpg)';
+//     }
+// });
+
+// Função para aplicar o modo escuro
+function aplicarModoEscuro() {
     const body = document.body;
-    if (body.style.backgroundImage) {
-        body.style.backgroundImage = '';
+    body.classList.add('dark-mode');
+    body.style.backgroundImage = 'url(../imagem/imagecopy.png)'; // Adiciona a imagem de fundo
+}
+
+// Função para remover o modo escuro
+function removerModoEscuro() {
+    const body = document.body;
+    body.classList.remove('dark-mode');
+    body.style.backgroundImage = ''; // Remove a imagem de fundo
+}
+
+// Função para alternar o modo escuro e armazenar a preferência
+function alternarModoEscuro() {
+    const body = document.body;
+    if (body.classList.contains('dark-mode')) {
+        removerModoEscuro();
+        localStorage.setItem('modoEscuro', 'false');
     } else {
-        body.style.backgroundImage = 'url(../imagem/foto-evento-iv-maratona-de-calculo-cct-unifor-800-getty-images.jpg)';
+        aplicarModoEscuro();
+        localStorage.setItem('modoEscuro', 'true');
     }
-});
+}
+
+// Verifica e aplica a preferência do modo escuro ao carregar a página
+function carregarPreferenciaModoEscuro() {
+    const modoEscuro = localStorage.getItem('modoEscuro');
+    if (modoEscuro === 'true') {
+        aplicarModoEscuro();
+    } else {
+        removerModoEscuro();
+    }
+}
+
+// Inicializa a preferência do modo escuro ao carregar a página
+document.addEventListener('DOMContentLoaded', carregarPreferenciaModoEscuro);
+
+// Adiciona o evento de clique ao botão de alternar modo escuro
+document.getElementById('toggle').addEventListener('click', alternarModoEscuro);
