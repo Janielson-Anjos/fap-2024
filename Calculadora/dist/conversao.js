@@ -75,3 +75,15 @@ document.addEventListener('DOMContentLoaded', carregarPreferenciaModoEscuro);
 
 // Adiciona o evento de clique ao botão de alternar modo escuro
 document.getElementById('toggle').addEventListener('click', alternarModoEscuro);
+
+const currentPage = window.location.pathname.split("/").pop();
+
+  // Seleciona todos os itens do navbar
+  const navItems = document.querySelectorAll('nav li');
+
+  // Adiciona a classe 'active' ao item correspondente
+  navItems.forEach(item => {
+    if (item.querySelector('a').getAttribute('href') === currentPage) {
+      item.classList.add('active');
+    }
+  });

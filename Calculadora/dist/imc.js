@@ -44,7 +44,7 @@
 function aplicarModoEscuro() {
     const body = document.body;
     body.classList.add('dark-mode');
-    body.style.backgroundImage = 'url(../imagem/imagecopy.png)'; // Adiciona a imagem de fundo
+    body.style.backgroundImage = 'url(../imagem/imagecopy.png)';
 }
 
 // Função para remover o modo escuro
@@ -127,3 +127,15 @@ function calcularIMC() {
 
 // Adiciona um listener para o botão que chama a função calcularIMC
 document.getElementById('calcular').addEventListener('click', calcularIMC);
+
+const currentPage = window.location.pathname.split("/").pop();
+
+  // Seleciona todos os itens do navbar
+  const navItems = document.querySelectorAll('nav li');
+
+  // Adiciona a classe 'active' ao item correspondente
+  navItems.forEach(item => {
+    if (item.querySelector('a').getAttribute('href') === currentPage) {
+      item.classList.add('active');
+    }
+  });

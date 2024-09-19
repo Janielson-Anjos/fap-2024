@@ -7,7 +7,7 @@
 }
 
 html, body {
-    height: 100%; /* Faz com que o body e o html ocupem toda a altura da viewport */
+    height: 100%;
 }
 
 body {
@@ -24,17 +24,16 @@ img{
     height: 400px;
 }
 
-.conteudo-direita{
-    background-color: #4F399A;
+.conteudo-esquerda{
     width: 400px;
     height: 400px;
+    background-color: #4F399A;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
-    
 }
 
 h2{
@@ -42,7 +41,7 @@ h2{
 }
 
 label{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 input{
