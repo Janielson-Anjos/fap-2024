@@ -34,6 +34,7 @@ img{
     align-items: center;
     justify-content: center;
     color: white;
+    animation:  animacao 1s;
 }
 
 h2{
@@ -78,3 +79,15 @@ a:hover{
     color: rgb(232, 231, 231);
     transition: color 0.3s ease;
 }
+
+@keyframes animacao{
+    0% {
+        transform: translateX(100px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/* chamar dentro da classe */
